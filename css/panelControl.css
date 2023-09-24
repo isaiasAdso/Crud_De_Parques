@@ -1,0 +1,318 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+  body{
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+  }
+
+:root{
+    --green: #58a42b;
+    --greenc: #89dc68;
+  }
+  /* encabezado de la web y sus caracteristicas */
+  .encabezado {
+    width: 100%;
+    height: 7rem;
+    background-color: var(--green);
+    display: flex;
+    gap: 16vh;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .titulo {
+    width: 400px;
+    color: #fff;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+  }
+  .contenedorSearch {
+    width: 350px;
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    gap: 10px;
+  }
+  .Search {
+    width: 280px;
+    height: 2rem;
+    border-radius: 3px;
+    border: none;
+    padding: 5px;
+  }
+  .botonSearch {
+    width: 35px;
+    height: 35px;
+    background-color: green;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  .botonSearch:hover{
+      background-color: var(--greenc);
+  }
+  .botonSearch > img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .profile{
+    height: 10vh;
+    width: 10vh;
+    background-color: grey;
+    border-radius: 50%;
+  }
+
+  .mainContainer{
+    display: flex;
+    flex-direction: row;
+    height: 80vh;
+    padding: 5vh;
+    gap:6vh;
+  }
+
+  .options{
+    width: 40vh;
+    background-color: rgb(213, 207, 207);
+  }
+  
+  ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap:5vh;
+  }
+
+  .option{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 6.5vh;
+    width: 30vh;
+    list-style:none;
+    background-color: var(--green);
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .option:hover{
+    background-color: green;
+  }
+  .activenav{
+    background-color: var(--greenc);
+  }
+
+  .options>ul>li>a{
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .resultContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 160vh;
+    background-color: rgb(173, 173, 173);
+    border-radius: 30px;
+  }
+  .entrada{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(173, 173, 173);
+  }
+  .textBienvenida{
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .textBienvenida p{
+    font-size: 80px;
+    font-style: italic;
+    font-weight: 800;
+  }
+  .textBienvenida div{
+    width: 100%;
+    justify-content: flex-end;
+    display: flex;
+  }
+  .contenedorInf{
+    display: none;
+    flex-direction: column;
+    border-radius: 30px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(213, 207, 207);
+  }
+  .inicio{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(213, 207, 207);
+  }
+  .pie {
+    width: 100%;
+    height: 2rem;
+    color: #fff;
+    background-color: var(--green);
+  }
+  
+.perfilContainer{
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 5px 0px;
+  display: none;
+  position: absolute;
+  flex-direction: column;
+  width: 220px;
+  height: 200px;
+  right: 10px;
+  top: 105px;
+  background-color: var(--green);
+  border-radius: 30px;
+}
+.encabezadoPerfilUser{
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ContenedorImagePerfil{
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: rgb(213, 207, 207);
+}
+.DatosUser{
+  flex: 1;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.pieUser{
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* ventana descrpcion */
+.ventanaOpaca{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.descripcionParqueSeleccionado{
+  position: relative;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  width: 600px;
+  height: 200px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 5px 0px;
+}
+.contenedorRespuesta{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contenedorTextDescrip{
+  width: 80%;
+  height: 80%;
+ 
+}
+.contenedorTextDescrip header{
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--green);
+  color: #fff;
+}
+.contenedorTextDescrip p{ 
+  padding: 5px;
+}
+.cerrarDescrip{
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  border-top-left-radius: 10px;
+  width: 2rem;
+  height: 2rem;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ventanaEliminarParque{
+  width: 400px;
+  height: 9rem;
+  border-radius: 5px;
+  background-color: var(--greenc);
+  flex-direction: column;
+}
+.ventanaEliminarParque header{
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  background-color: var(--green);
+  color: #fff;
+  width: 100%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ventanaEliminarParque section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 70%;
+  background-color: #fff;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.eliminarParque{
+
+  width: 130px;
+  height: 2rem;
+  margin-right: 5%;
+  background-color: var(--green);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}

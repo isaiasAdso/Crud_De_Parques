@@ -1,0 +1,360 @@
+:root{
+    --green: #58a42b;
+    --greenc: #89dc68;
+  }
+.encabezadoOpcion1{
+    width: 100%;
+    height: 3rem;
+    background-color: var(--green);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+}
+.contenedorOpcion1{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    background-color: var(--greenc);
+}
+.tabla-div {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 95%;
+}
+
+.tabla-fila {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+.tabla-columna {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2rem;
+    border-left: 1px solid;
+}
+
+.encabezado-tabla {
+    font-weight: bold;
+    background-color: #333;
+    color: #fff;
+}
+.idParque{
+    width: 2rem;
+    border-right: 1px solid;
+}
+.nombreParque{
+    width: 150px;
+    border-right: 1px solid;
+}
+.tipoDeParque{
+    width: 120px;
+    border-right: 1px solid;
+}
+.ubicacionParque{
+    width: 150px;
+    border-right: 1px solid;
+}
+.atraccionParque{
+    width: 150px;
+    border-right: 1px solid;
+}
+.eventoParque{
+    width: 150px;
+    border-right: 1px solid;
+}
+.descripcionParque{
+    width: 100px;
+    border-right: 1px solid;
+}
+.acciones{
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.verDescrip{
+    width: 30px;
+    height: 25px;
+    background-color: green;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 2px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+.ventanaGrisOpcion1{
+    flex: 1;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(213, 207, 207);
+}
+.pieOpcion1{
+    width: 100%;
+    height: 4rem;
+    background-color: var(--greenc);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.btnAggOpcion1{
+    margin-right: 20px;
+    width: 130px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2rem;
+    border-radius: 10px;
+    background-color: var(--green);
+    cursor: pointer;
+}
+/* formulario Agregar parques */
+.FormAggparques{
+    width: 90%;
+    flex-direction: column;
+    height: 90%;
+}
+.EncabezadoFormAggParque{
+    width: 100%;
+    height: 10%;
+    background-color: var(--green);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contenedorDatosformAggParque{
+    height: 90%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: var(--greenc);
+}
+.datos1{
+    width: 50%;
+    height: 90%;
+    border-right: 1px solid;
+}
+
+.cuestion{
+    width: 100%;
+    height: 3.1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.cuestion p{
+    margin-left: 100px;
+    font-size: 15px;
+    font-weight: 600;
+}
+.cuestion input{
+    margin-left: 100px;
+    width: 300px;
+    height: 2rem;
+    border-radius: 5px;
+}
+.cuestion select{
+    margin-left: 100px;
+    width: 300px;
+    height: 2rem;
+}
+
+.datos2{
+    width: 50%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.datos2 input{
+    text-align: center;
+    width: 90%;
+    height: 5rem;
+}
+.datos2 label{
+    width: 90%;
+    height: 8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+.datos2 footer{
+    width: 100%;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+}
+.cancelar{
+    width: 130px;
+    cursor: pointer;
+    height: 2rem;
+    background-color: red;
+    border-radius: 5px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+.cancelar:hover{
+    background-color: rgb(156, 9, 9);
+}
+.agg{
+    width: 130px;
+    height: 2rem;
+    margin-right: 5%;
+    background-color: var(--green);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+.agg:hover{
+    background-color: green;
+}
+#image{
+    display: none;
+}
+
+
+
+.FormEditarParque {
+    width: 90%;
+    height: 90%;
+    border: 1px solid;
+    flex-direction: column;
+  }
+  .tituloFormEditarParque {
+    width: 100%;
+    height: 10%;
+    background-color: var(--green);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .contenedorPartes {
+      height: 90%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      background-color: var(--greenc);
+      justify-content: center;
+  }
+  .parte1Editarparque {
+    width: 50%;
+    height: 90%;
+    border-right: 1px solid;
+  }
+  .containerCuestion {
+    width: 100%;
+    height: 3.1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .containerCuestion input {
+    margin-left: 100px;
+    width: 300px;
+    height: 2rem;
+    border-radius: 5px;
+    text-indent: 10px;
+  }
+  .containerCuestion p {
+    margin-left: 100px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .containerCuestion select {
+    margin-left: 100px;
+    width: 300px;
+    height: 2rem;
+  }
+  .parte2Editarparque{
+      width: 50%;
+      height: 90%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+  }
+  .parte2Editarparque input{
+      text-align: center;
+      width: 90%;
+      height: 5rem;
+  }
+  .parte2Editarparque label{
+      width: 90%;
+      height: 8rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #fff;
+  }
+  #image{
+      display: none;
+  }
+  .parte2Editarparque footer{
+      width: 100%;
+      display: flex;
+      flex: 1;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 20px;
+  }
+  .cancelar{
+      width: 130px;
+      cursor: pointer;
+      height: 2rem;
+      background-color: red;
+      border-radius: 5px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+  }
+  .cancelar:hover{
+      background-color: rgb(156, 9, 9);
+  }
+  .ActualizarParque{
+      width: 130px;
+      height: 2rem;
+      margin-right: 5%;
+      background-color: var(--green);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+  
+  }
+  .agg:hover{
+      background-color: green;
+  }
+
+/* formulario editar parque */
+
