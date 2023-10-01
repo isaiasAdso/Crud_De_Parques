@@ -1,6 +1,7 @@
 <?php
 require_once "../models/data_base.php";
 
+
 // Obtén los datos del formulario
 $idEvento = $_POST["idEvento"]; // El campo hidden con el ID del evento a editar
 $nombre = $_POST["nombreEventoEditar"];
@@ -11,8 +12,11 @@ $hora_inicial = $_POST["hora_inicialEventoEditar"];
 $hora_final = $_POST["hora_finalEventoEditar"];
 $descripcion = $_POST["descripcionEventoEditar"];
 
+
 date_default_timezone_set("America/Bogota");
 
+var_dump($_POST); // Muestra los datos del formulario para verificar
+$idEvento = $_POST["idEvento"];
 // Valida que la fecha inicial no sea menor que la fecha de registro
 $fecha_registro = date("Y-m-d"); // Supongamos que la fecha de registro es la fecha actual
 if ($fecha_inicial < $fecha_registro) {

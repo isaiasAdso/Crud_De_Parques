@@ -312,66 +312,66 @@ if ($rol != 1) {
 
 
         <!-- EDITAR EVENTO -->
-        <form action="php/actualizarEvento.php" method="post" id="formularioAggEvento" class="FormEditarEventos" enctype="multipart/form-data">
-          <div class="EncabezadoEditarEventos">
-            <p id="tituloEvento"></p>
-          </div>
-          <input type="hidden" id="valorIdEvento" name="idEvento">
-          <main class="DatosEditarEventos">
-            <section class="datos1EditarEventos">
-              <div class="contenedorEditarTITULOS">
-                <p>Nombre:</p>
-                <input type="text" name="nombreEventoEditar" id="nombreEventoEditar" />
-              </div>
-              <div class="contenedorEditarTITULOS">
-                <p>Tipo de Evento:</p>
-                <select name="tipo_eventoEventoEditar" id="tipo_eventoEventoEditar" class="TipoEventoEditado">
-                  <?php
-                        require_once "models/data_base.php";
-                        $sql = "SELECT id_tipoevento, nombre FROM tipoevento";
-                        $result = $conexion->query($sql);
-                        while ($row = $result->fetch_assoc()) {
-                          echo "<option value='" . $row['id_tipoevento'] . "'>" . $row['nombre'] . "</option>";
-                        }
-                       
-                        ?>
-                </select>
-              </div>
-              <div class="fechasEditarEventos">
-                <div class="fechaInicialEditarEventos">
-                  <p>Fecha Inicial:</p>
-                  <input type="date" name="fecha_inicialEventoEditar" id="fecha_inicialEventoEditar" />
-                </div>
-                <div class="fechaFinalEditarEventos">
-                  <p>Fecha Final:</p>
-                  <input type="date" name="fecha_finalEventoEditar" id="fecha_finalEventoEditar" />
-                </div>
-              </div>
+        <form action="php/actualizarEvento.php" id="formularioAggEvento" class="FormEditarEventos" enctype="multipart/form-data">
+  <div class="EncabezadoEditarEventos">
+    <p id="tituloEvento"></p>
+  </div>
+  <input type="hidden" id="valorIdEvento" name="">
+  <main class="DatosEditarEventos">
+    <section class="datos1EditarEventos">
+      <div class="contenedorEditarTITULOS">
+        <p>Nombre:</p>
+        <input type="text" name="" id="nombreEventoEditar" />
+      </div>
+      <div class="contenedorEditarTITULOS">
+        <p>Tipo de Evento:</p>
+        <select name="" id="tipo_eventoEventoEditar" class="TipoEventoEditado">
+          <?php
+          require_once "models/data_base.php";
+          $sql = "SELECT id_tipoevento, nombre FROM tipoevento";
+          $result = $conexion->query($sql);
+          while ($row = $result->fetch_assoc()) {
+            echo "<option value='" . $row['id_tipoevento'] . "'>" . $row['nombre'] . "</option>";
+          }
+          ?>
+        </select>
+      </div>
+      <div class="fechasEditarEventos">
+        <div class="fechaInicialEditarEventos">
+          <p>Fecha Inicial:</p>
+          <input type="date" name="" id="fecha_inicialEventoEditar" />
+        </div>
+        <div class="fechaFinalEditarEventos">
+          <p>Fecha Final:</p>
+          <input type="date" name="" id="fecha_finalEventoEditar" />
+        </div>
+      </div>
 
-              <div class="HorasEditarEventos">
-                <div class="horaInicialEditarEventos">
-                  <p>Hora Inicial:</p>
-                  <input type="time" name="hora_inicialEventoEditar" id="hora_inicialEventoEditar" />
-                </div>
-                <div class="horaFinalEditarEventos">
-                  <p>Hora Final:</p>
-                  <input type="time" name="hora_finalEventoEditar" id="hora_finalEventoEditar" />
-                </div>
-              </div>
-            </section>
-            <section class="datos2EditarEventos">
-              <label for="imagenEventos">Selecciona una imagen..</label>
-              <input type="file" name="imagenEventoEditar" id="imagenEventoEditar" />
-              <input type="text" name="descripcionEventoEditar" id="descripcionEventoEditar" placeholder="Descripcion" />
-              <footer>
-                <article class="cancelar" onclick="cerrarContenedorEditarEvento()">
-                  Cancelar
-                </article>
-                <button type="submit" class="editarEvento">Actualizar</button>
-              </footer>
-            </section>
-          </main>
-        </form>
+      <div class="HorasEditarEventos">
+        <div class="horaInicialEditarEventos">
+          <p>Hora Inicial:</p>
+          <input type="time" name="" id="hora_inicialEventoEditar" />
+        </div>
+        <div class="horaFinalEditarEventos">
+          <p>Hora Final:</p>
+          <input type="time" name="" id="hora_finalEventoEditar" />
+        </div>
+      </div>
+    </section>
+    <section class="datos2EditarEventos">
+      <label for="imagenEventos">Selecciona una imagen..</label>
+      <input type="file" name="" id="imagenEventoEditar" />
+      <input type="text" name="" id="descripcionEventoEditar" placeholder="Descripcion" />
+      <footer>
+        <article class="cancelar" onclick="cerrarContenedorEditarEvento()">
+          Cancelar
+        </article>
+        <button type="submit" class="editarEvento">Actualizar</button>
+      </footer>
+    </section>
+  </main>
+</form>
+
 
 
 
