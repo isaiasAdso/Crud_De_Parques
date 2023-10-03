@@ -167,7 +167,7 @@ if ($rol != 1) {
             </section>
           </form>
 
-          <form action="php/actualizarParque.php" method="post" class="FormEditarParque" id="editarParque"">
+          <form  method="post" class="FormEditarParque" id="editarParque"">
             <div class=" tituloFormEditarParque">
             <input type="hidden" id="valorIdParque" name="idparque">
             <h3 id="tituloParque"></h3>
@@ -312,65 +312,65 @@ if ($rol != 1) {
 
 
         <!-- EDITAR EVENTO -->
-        <form action="php/actualizarEvento.php" id="formularioAggEvento" class="FormEditarEventos" enctype="multipart/form-data">
-  <div class="EncabezadoEditarEventos">
-    <p id="tituloEvento"></p>
-  </div>
-  <input type="hidden" id="valorIdEvento" name="">
-  <main class="DatosEditarEventos">
-    <section class="datos1EditarEventos">
-      <div class="contenedorEditarTITULOS">
-        <p>Nombre:</p>
-        <input type="text" name="" id="nombreEventoEditar" />
-      </div>
-      <div class="contenedorEditarTITULOS">
-        <p>Tipo de Evento:</p>
-        <select name="" id="tipo_eventoEventoEditar" class="TipoEventoEditado">
-          <?php
-          require_once "models/data_base.php";
-          $sql = "SELECT id_tipoevento, nombre FROM tipoevento";
-          $result = $conexion->query($sql);
-          while ($row = $result->fetch_assoc()) {
-            echo "<option value='" . $row['id_tipoevento'] . "'>" . $row['nombre'] . "</option>";
-          }
-          ?>
-        </select>
-      </div>
-      <div class="fechasEditarEventos">
-        <div class="fechaInicialEditarEventos">
-          <p>Fecha Inicial:</p>
-          <input type="date" name="" id="fecha_inicialEventoEditar" />
-        </div>
-        <div class="fechaFinalEditarEventos">
-          <p>Fecha Final:</p>
-          <input type="date" name="" id="fecha_finalEventoEditar" />
-        </div>
-      </div>
+        <form method="post" id="formularioEditarEvento" class="FormEditarEventos" enctype="multipart/form-data">
+          <div class="EncabezadoEditarEventos">
+            <p id="tituloEvento"></p>
+          </div>
+          <input type="hidden" id="valorIdEvento" name="idEvento">
+          <main class="DatosEditarEventos">
+            <section class="datos1EditarEventos">
+              <div class="contenedorEditarTITULOS">
+                <p>Nombre:</p>
+                <input type="text" name="nombreEventoEditar" id="nombreEventoEditar" />
+              </div>
+              <div class="contenedorEditarTITULOS">
+                <p>Tipo de Evento:</p>
+                <select name="tipo_eventoEventoEditar" id="tipo_eventoEventoEditar" class="TipoEventoEditado">
+                  <?php
+                  require_once "models/data_base.php";
+                  $sql = "SELECT id_tipoevento, nombre FROM tipoevento";
+                  $result = $conexion->query($sql);
+                  while ($row = $result->fetch_assoc()) {
+                    echo "<option value='" . $row['id_tipoevento'] . "'>" . $row['nombre'] . "</option>";
+                  }
+                  ?>
+                </select>
+              </div>
+              <div class="fechasEditarEventos">
+                <div class="fechaInicialEditarEventos">
+                  <p>Fecha Inicial:</p>
+                  <input type="date" name="fecha_inicialEventoEditar" id="fecha_inicialEventoEditar" />
+                </div>
+                <div class="fechaFinalEditarEventos">
+                  <p>Fecha Final:</p>
+                  <input type="date" name="fecha_finalEventoEditar" id="fecha_finalEventoEditar" />
+                </div>
+              </div>
 
-      <div class="HorasEditarEventos">
-        <div class="horaInicialEditarEventos">
-          <p>Hora Inicial:</p>
-          <input type="time" name="" id="hora_inicialEventoEditar" />
-        </div>
-        <div class="horaFinalEditarEventos">
-          <p>Hora Final:</p>
-          <input type="time" name="" id="hora_finalEventoEditar" />
-        </div>
-      </div>
-    </section>
-    <section class="datos2EditarEventos">
-      <label for="imagenEventos">Selecciona una imagen..</label>
-      <input type="file" name="" id="imagenEventoEditar" />
-      <input type="text" name="" id="descripcionEventoEditar" placeholder="Descripcion" />
-      <footer>
-        <article class="cancelar" onclick="cerrarContenedorEditarEvento()">
-          Cancelar
-        </article>
-        <button type="submit" class="editarEvento">Actualizar</button>
-      </footer>
-    </section>
-  </main>
-</form>
+              <div class="HorasEditarEventos">
+                <div class="horaInicialEditarEventos">
+                  <p>Hora Inicial:</p>
+                  <input type="time" name="hora_inicialEventoEditar" id="hora_inicialEventoEditar" />
+                </div>
+                <div class="horaFinalEditarEventos">
+                  <p>Hora Final:</p>
+                  <input type="time" name="hora_finalEventoEditar" id="hora_finalEventoEditar" />
+                </div>
+              </div>
+            </section>
+            <section class="datos2EditarEventos">
+              <label for="imagenEventos">Selecciona una imagen..</label>
+              <input type="file" name="imagenEventoEditar" id="imagenEventoEditar" />
+              <input type="text" name="descripcionEventoEditar" id="descripcionEventos" placeholder="Descripcion" />
+              <footer>
+                <article class="cancelar" onclick="cerrarContenedorEditarEvento()">
+                  Cancelar
+                </article>
+                <button type="button" class="editarEvento">Actualizar</button>
+              </footer>
+            </section>
+          </main>
+        </form>
 
 
 
@@ -466,7 +466,40 @@ if ($rol != 1) {
       <header class="EncabezadoAtracciones">
         <p>Atracciones </p>
       </header>
-      <main class="contenedorAtracciones"></main>
+      <main class="contenedorAtracciones">
+
+      <div class="tabla-div">
+          <div class="tabla-fila encabezado-tabla">
+            <div class="tabla-columna idAtraccion">id</div>
+            <div class="tabla-columna nombreAtraccion">nombre</div>
+            <div class="tabla-columna descripcionAtraccion">Descripcion</div>
+            <div class="tabla-columna TipoAtraccion">Tipo Atraccion</div>
+            <div class="tabla-columna AccionesAtracciones">Acciones</div>
+          </div>
+
+        
+
+          <div class="tabla-fila" data-id="">
+            <div class="tabla-columna idAtraccion"></div>
+            <div class="tabla-columna nombreAtraccion"></div>
+            <div class="tabla-columna descripcionAtraccion"></div>
+            <div class="tabla-columna TipoAtraccion"></div>
+            <div class="tabla-columna AccionesAtracciones">
+              <img src="asset/edit.svg" alt="" srcset="" onclick="">
+              <img src="asset/delete.svg" alt="" onclick="">
+              <input type="hidden" name="" value="">
+            </div>
+          </div>
+
+
+
+          <!-- Puedes agregar más filas aquí -->
+        </div>
+
+
+
+
+      </main>
       <div class="ventanaFormAggAtracciones">
         <!-- formlario aregar atracciones -->
         <form action="" method="post" class="FormAggAtraccion" id="formulariotraccion" enctype="multipart/form-data">
@@ -580,6 +613,22 @@ if ($rol != 1) {
       </div>
 
     </div>
+
+    <!-- ventana eliminar evento -->
+      <div class="VentanaEliminarEvento">
+        <header>
+          <h3 id="EventoEliminar">Seguro de Eliminar el Evento :</h3>
+        </header>
+        <section>
+          <article class="cancelar" onclick="CerrarEliminarEvento()">
+            Cancelar
+          </article>
+          <form action="" method="post" id="EliminarEvento">
+            <input type="hidden" id="Idevento" name="idEvento">
+            <button type="button" class="eliminarEvento">Aceptar</button>
+          </form>
+        </section>
+      </div>
 
     <!-- ventana eliminar parque -->
     <div class="ventanaEliminarParque">

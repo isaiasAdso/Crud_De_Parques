@@ -306,7 +306,47 @@
   border-bottom-right-radius: 5px;
 }
 .eliminarParque{
+  width: 130px;
+  height: 2rem;
+  margin-right: 5%;
+  background-color: var(--green);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
 
+/* ventana eliminar evento */
+
+.VentanaEliminarEvento{
+  width: 400px;
+  height: 9rem;
+  border-radius: 5px;
+  background-color: var(--greenc);
+  flex-direction: column;
+}
+.VentanaEliminarEvento header{
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  background-color: var(--green);
+  color: #fff;
+  width: 100%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.VentanaEliminarEvento section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 70%;
+  background-color: #fff;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.eliminarEvento{
   width: 130px;
   height: 2rem;
   margin-right: 5%;

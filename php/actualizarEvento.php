@@ -15,24 +15,27 @@ $descripcion = $_POST["descripcionEventoEditar"];
 
 date_default_timezone_set("America/Bogota");
 
-var_dump($_POST); // Muestra los datos del formulario para verificar
-$idEvento = $_POST["idEvento"];
-// Valida que la fecha inicial no sea menor que la fecha de registro
-$fecha_registro = date("Y-m-d"); // Supongamos que la fecha de registro es la fecha actual
-if ($fecha_inicial < $fecha_registro) {
-    echo "Error: La fecha inicial no puede ser menor que la fecha de registro.";
-    exit;
-}
+
+// Ajusta el formato de la fecha inicial y final al formato de fecha (Y-m-d)
+$fecha_inicial_dt = new DateTime($fecha_inicial);
+$fecha_final_dt = new DateTime($fecha_final);
 
 // Valida que la fecha final no sea menor que la fecha inicial
-if ($fecha_final < $fecha_inicial) {
+if ($fecha_final_dt < $fecha_inicial_dt) {
     echo "Error: La fecha final no puede ser menor que la fecha inicial.";
     exit;
 }
 
+// Valida que la fecha inicial no sea menor que la fecha de registro
+$fecha_registro = date("Y-m-d"); // Supongamos que la fecha de registro es la fecha actual
+if ($fecha_inicial_dt < new DateTime($fecha_registro)) {
+    echo "Error: La fecha inicial no puede ser menor que la fecha de registro.";
+    exit;
+}
+
 // Ajusta el formato de la hora al formato de 24 horas (HH:mm)
-$hora_inicialN = date("H:i:s", strtotime($hora_inicial));
-$hora_finalN = date("H:i:s", strtotime($hora_final));
+$hora_inicialN = (new DateTime($hora_inicial))->format("H:i:s");
+$hora_finalN = (new DateTime($hora_final))->format("H:i:s");
 
 // Maneja la imagen subida si es necesario (solo si se ha seleccionado una nueva imagen)
 if(isset($_FILES["imagenEventoEditar"]) && $_FILES["imagenEventoEditar"]["error"] === UPLOAD_ERR_OK){

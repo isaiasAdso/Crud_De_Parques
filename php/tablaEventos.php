@@ -17,9 +17,6 @@
             }
         }
 
-
-
-
         echo '<div class="tabla-fila" data-id="">';
         echo '<div class="tabla-columna idEvento">' . $datos['id_evento'] . '</div>';
         echo '<div class="tabla-columna nombreEvento">' . $datos['nombre'] . '</div>';
@@ -30,8 +27,7 @@
         echo '<div class="tabla-columna HoraFinal">' . $datos['hora_final'] . '</div>';
         echo '<div class="tabla-columna acciones">';
         echo '<img src="asset/edit.svg" alt="" srcset="" onclick="abrirEditarEvento(' . $datos['id_evento'] . ')">';
-        echo '<img src="asset/delete.svg" alt="" onclick="AbrirEliminarParque(' . $datos['id_evento'] . ')">';
-        echo '<input type="hidden" name="id_parque" value="' . $datos['id_evento'] . '">';
+        echo '<img src="asset/delete.svg" alt="" onclick="abrirEliminarEvento(' . $datos['id_evento'] . ')">';
         echo '</div>';
         echo '</div>';
     }

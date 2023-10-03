@@ -18,6 +18,7 @@
 }
 .contenedorAtracciones{
     flex: 1;
+    justify-content: center;
     display: flex;
     flex: 1;
     background-color: var(--greenc);
@@ -156,4 +157,23 @@
 }
 #imagenAtraccion{
     display: none;
+}
+
+
+.idAtraccion{
+    width: 100px;
+}
+.nombreAtraccion{
+    width: 250px;
+}
+.descripcionAtraccion{
+    width: 300px;
+}
+.TipoAtraccion{
+    width: 200px;
+}
+.AccionesAtracciones{
+    flex: 1;
+    display: flex;
+    justify-content: space-evenly;
 }
