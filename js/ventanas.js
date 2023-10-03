@@ -32,6 +32,7 @@ function cerrarContenedorAggEvento(){
 }
 // CONTENEDOR ATRACCIONES
 function abrirVentanaAggAtraccion(){
+    document.querySelector("#formulariotraccion").style.display = "none";
     document.querySelector(".pieAtracciones").style.display = "none";
     document.querySelector(".contenedorAtracciones").style.display = "none";
     document.querySelector(".ventanaFormAggAtracciones").style.display = "flex";

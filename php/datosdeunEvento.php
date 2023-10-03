@@ -1,6 +1,5 @@
 <?php
  $conexion = mysqli_connect("localhost", "root", "", "parques");
-// Verificar si se recibió el ID del parque
 if (isset($_POST['idEvento'])) {
     $idEvento = $_POST['idEvento'];
 

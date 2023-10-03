@@ -163,17 +163,149 @@
 .idAtraccion{
     width: 100px;
 }
+.idAtraccion2{
+    height: 125px;
+}
 .nombreAtraccion{
     width: 250px;
+}
+.nombreAtraccion2{
+    height: 125px;
 }
 .descripcionAtraccion{
     width: 300px;
 }
+.descripcionAtraccion2{
+    height: 125px;
+    font-size: 14px;
+}
 .TipoAtraccion{
     width: 200px;
+}
+.TipoAtraccion2{
+    height: 125px;
 }
 .AccionesAtracciones{
     flex: 1;
     display: flex;
     justify-content: space-evenly;
 }
+.AccionesAtracciones2{
+    height: 125px;
+}
+
+/* editar atracciones */
+
+.VentanaEditarAtraccion{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .formularioEditarAtracciones{
+    width: 90%;
+    height: 90%;
+  }
+  .encabezadoAtracciones{
+    width: 100%;
+    height: 10%;
+    background-color: var(--green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+  
+  }
+  .contenedorAtracciones2{
+    width: 100%;
+    height: 90%;
+    background-color: var(--greenc);
+    display: flex;
+    align-items: center;
+  }
+  .datos1Atraccion{
+    width: 50%;
+    height: 90%;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid;
+  }
+  .datos2Atraccion{
+    width: 50%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+  }
+  .contenedorTITULOSAtracciones{
+    width: 100%;
+    height: 3rem;
+  
+  }
+  .contenedorTITULOSAtracciones p{
+    margin-left: 70px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .contenedorTITULOSAtracciones input{
+    margin-left: 70px;
+    width: 280px;
+    height: 2rem;
+    border-radius: 5px;
+  }
+  .contenedorTITULOSAtracciones textarea{
+    margin-left: 70px;
+    width: 300px;
+    height: 2rem;
+    border-radius: 5px;
+  }
+  .contenedorTITULOSAtracciones select{
+    margin-left: 70px;
+    width: 300px;
+    height: 2rem;
+    border-radius: 5px;
+  }
+  #DescripcionAtraccion{
+    height: 150px;
+    max-width: 300px; /* ajusta el valor según tus necesidades */
+    width: 100%;
+    resize: vertical;
+    resize: none;
+  }
+  .contenedorImgEditarAtraccion{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .accionesEditarAtraccion{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .imgAtraccion{
+    width: 90%;
+    height: 200px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .AggAtra{
+    width: 130px;
+    height: 2rem;
+    margin-right: 5%;
+    background-color: var(--green);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  

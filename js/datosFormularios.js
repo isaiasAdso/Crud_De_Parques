@@ -105,6 +105,7 @@ function AbrirDescripcion(idParque) {
   document.querySelector(".descripcionParqueSeleccionado").style.display =
     "flex";
   document.querySelector(".ventanaEliminarParque").style.display = "none";
+  document.querySelector(".VentanaEliminarEvento").style.display = "none"
 
   // Realizar la solicitud AJAX
   $.ajax({

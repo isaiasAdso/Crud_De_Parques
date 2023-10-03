@@ -167,7 +167,7 @@ if ($rol != 1) {
             </section>
           </form>
 
-          <form  method="post" class="FormEditarParque" id="editarParque"">
+          <form method="post" class="FormEditarParque" id="editarParque"">
             <div class=" tituloFormEditarParque">
             <input type="hidden" id="valorIdParque" name="idparque">
             <h3 id="tituloParque"></h3>
@@ -468,7 +468,7 @@ if ($rol != 1) {
       </header>
       <main class="contenedorAtracciones">
 
-      <div class="tabla-div">
+        <div class="tabla-div">
           <div class="tabla-fila encabezado-tabla">
             <div class="tabla-columna idAtraccion">id</div>
             <div class="tabla-columna nombreAtraccion">nombre</div>
@@ -477,9 +477,12 @@ if ($rol != 1) {
             <div class="tabla-columna AccionesAtracciones">Acciones</div>
           </div>
 
-        
 
-          <div class="tabla-fila" data-id="">
+          <?php
+          include("php/tablaAtracciones.php");
+          ?>
+
+          <!-- <div class="tabla-fila" data-id="">
             <div class="tabla-columna idAtraccion"></div>
             <div class="tabla-columna nombreAtraccion"></div>
             <div class="tabla-columna descripcionAtraccion"></div>
@@ -489,7 +492,7 @@ if ($rol != 1) {
               <img src="asset/delete.svg" alt="" onclick="">
               <input type="hidden" name="" value="">
             </div>
-          </div>
+          </div> -->
 
 
 
@@ -500,7 +503,85 @@ if ($rol != 1) {
 
 
       </main>
+
+
+
+
+
+
       <div class="ventanaFormAggAtracciones">
+
+
+
+
+        <!-- editar atracciones -->
+        <section class="VentanaEditarAtraccion">
+          <form action="" class="formularioEditarAtracciones">
+            <div class="encabezadoAtracciones">
+              <h3>EDITAR ATRACCION</h3>
+            </div>
+            <section class="contenedorAtracciones2">
+              <section class="datos1Atraccion">
+                <div class="contenedorTITULOSAtracciones">
+                  <p>Nombre:</p>
+                  <input type="text" name="" id="nombreAtraccionEditar" />
+                </div>
+                <div class="contenedorTITULOSAtracciones">
+                  <p>Tipo Atraccion:</p>
+                  <select name="" id="">
+                    <?php
+                    require_once "models/data_base.php";
+                    $sql = "SELECT id_atraccion, nombre FROM atracciones";
+                    $result = $conexion->query($sql);
+                    while ($row = $result->fetch_assoc()) {
+                      echo "<option value='" . $row['id_atraccion'] . "'>" . $row['nombre'] . "</option>";
+                    }
+                    ?>
+                  </select>
+                </div>
+                <div class="contenedorTITULOSAtracciones">
+                  <p>Descripcion:</p>
+                  <textarea name="" id="DescripcionAtraccion"></textarea>
+                </div>
+              </section>
+              <section class="datos2Atraccion">
+                <section class="contenedorImgEditarAtraccion">
+                  <label for="imagenAtraccion" class="imgAtraccion">Selecciona una Imagen..</label>
+                  <input type="file" name="" id="imagenAtraccion">
+                </section>
+                <div class="accionesEditarAtraccion">
+                  <article class="cancelar" onclick="cerrarEditarAtraccion()">
+                    Cancelar
+                  </article>
+                  <button type="button" class="AggAtra">Actualizar</button>
+                </div>
+              </section>
+            </section>
+          </form>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <!-- formlario aregar atracciones -->
         <form action="" method="post" class="FormAggAtraccion" id="formulariotraccion" enctype="multipart/form-data">
           <div class="encabezadoFormAgg">Agregar una atraccion</div>
@@ -615,20 +696,20 @@ if ($rol != 1) {
     </div>
 
     <!-- ventana eliminar evento -->
-      <div class="VentanaEliminarEvento">
-        <header>
-          <h3 id="EventoEliminar">Seguro de Eliminar el Evento :</h3>
-        </header>
-        <section>
-          <article class="cancelar" onclick="CerrarEliminarEvento()">
-            Cancelar
-          </article>
-          <form action="" method="post" id="EliminarEvento">
-            <input type="hidden" id="Idevento" name="idEvento">
-            <button type="button" class="eliminarEvento">Aceptar</button>
-          </form>
-        </section>
-      </div>
+    <div class="VentanaEliminarEvento">
+      <header>
+        <h3 id="EventoEliminar">Seguro de Eliminar el Evento :</h3>
+      </header>
+      <section>
+        <article class="cancelar" onclick="CerrarEliminarEvento()">
+          Cancelar
+        </article>
+        <form action="" method="post" id="EliminarEvento">
+          <input type="hidden" id="Idevento" name="idEvento">
+          <button type="button" class="eliminarEvento">Aceptar</button>
+        </form>
+      </section>
+    </div>
 
     <!-- ventana eliminar parque -->
     <div class="ventanaEliminarParque">
@@ -669,5 +750,6 @@ if ($rol != 1) {
 <script src="js/datosFormularios.js"></script>
 <script src="js/perfilAdmin.js"></script>
 <script src="js/ventanaPERFIL.js"></script>
+<script src="js/datosFormularioAtraccion.js"></script>
 
 </html>
