@@ -516,7 +516,8 @@ if ($rol != 1) {
 
         <!-- editar atracciones -->
         <section class="VentanaEditarAtraccion">
-          <form action="" class="formularioEditarAtracciones">
+          <form action="" method="post" class="formularioEditarAtracciones" id="formularioEditarAtracciones" enctype="multipart/form-data">
+          <input type="hidden" id="valorIdAtraccion" name="valorIdAtraccion">
             <div class="encabezadoAtracciones">
               <h3>EDITAR ATRACCION</h3>
             </div>
@@ -524,30 +525,30 @@ if ($rol != 1) {
               <section class="datos1Atraccion">
                 <div class="contenedorTITULOSAtracciones">
                   <p>Nombre:</p>
-                  <input type="text" name="" id="nombreAtraccionEditar" />
+                  <input type="text" name="nombre" id="nombreAtraccionEditar" />
                 </div>
                 <div class="contenedorTITULOSAtracciones">
                   <p>Tipo Atraccion:</p>
-                  <select name="" id="">
+                  <select name="tipoAtraccion" id="TipoAtraccionEditar">
                     <?php
                     require_once "models/data_base.php";
-                    $sql = "SELECT id_atraccion, nombre FROM atracciones";
+                    $sql = "SELECT id_tipo, nombre FROM tipoatraccion";
                     $result = $conexion->query($sql);
                     while ($row = $result->fetch_assoc()) {
-                      echo "<option value='" . $row['id_atraccion'] . "'>" . $row['nombre'] . "</option>";
+                      echo "<option value='" . $row['id_tipo'] . "'>" . $row['nombre'] . "</option>";
                     }
                     ?>
                   </select>
                 </div>
                 <div class="contenedorTITULOSAtracciones">
                   <p>Descripcion:</p>
-                  <textarea name="" id="DescripcionAtraccion"></textarea>
+                  <textarea name="descripcion" id="DescripcionAtraccion"></textarea>
                 </div>
               </section>
               <section class="datos2Atraccion">
                 <section class="contenedorImgEditarAtraccion">
                   <label for="imagenAtraccion" class="imgAtraccion">Selecciona una Imagen..</label>
-                  <input type="file" name="" id="imagenAtraccion">
+                  <input type="file" name="imagen" id="imagenAtraccion">
                 </section>
                 <div class="accionesEditarAtraccion">
                   <article class="cancelar" onclick="cerrarEditarAtraccion()">
@@ -683,6 +684,26 @@ if ($rol != 1) {
 
   <div class="ventanaOpaca">
 
+  <!-- eliminar Atraccion -->
+
+  <div class="ventanaEliminarAtraccion">
+    <header class="EliminarAtraccionH">
+      
+    </header>
+    <section>
+
+      <article class="cancelar" onclick="cerrarEliminarAtraccion()">
+        Cancelar
+      </article>
+      <form action="" method="post" id="Eliminaratraccion">
+        <input type="hidden" id="idatraccionEliminar" name="idatraccionEliminar">
+        <button type="button" class="eliminarAtraccion">Aceptar</button>
+      </form>
+    
+    </section>
+   </div>
+
+<!-- descripcion parque -->
     <div class="descripcionParqueSeleccionado">
       <div class="cerrarDescrip" onclick="cerrarDescripcion()"><img src="asset/close.svg" alt="" srcset="">
 
