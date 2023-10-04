@@ -10,8 +10,9 @@
   }
 
 :root{
-    --green: #58a42b;
-    --greenc: #89dc68;
+  --green: #1d4050;
+  --greenc: #6497ac;
+  --blanco: #d7e5f0;
   }
   /* encabezado de la web y sus caracteristicas */
   .encabezado {
@@ -28,10 +29,11 @@
     width: 400px;
     color: #fff;
     height: 3rem;
+    gap: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
+    font-size: 16px;
   }
   .contenedorSearch {
     width: 350px;
@@ -50,13 +52,13 @@
   .botonSearch {
     width: 35px;
     height: 35px;
-    background-color: green;
+    background-color: var(--greenc);
     border: none;
     cursor: pointer;
     border-radius: 3px;
   }
   .botonSearch:hover{
-      background-color: var(--greenc);
+      background-color: var(--blanco);
   }
   .botonSearch > img {
     width: 25px;
@@ -104,7 +106,7 @@
     cursor: pointer;
   }
   .option:hover{
-    background-color: green;
+    background-color: var(--green);
   }
   .activenav{
     background-color: var(--greenc);
@@ -319,6 +321,7 @@
 /* ventana eliminar evento */
 
 .VentanaEliminarEvento{
+  display: none;
   width: 400px;
   height: 9rem;
   border-radius: 5px;
@@ -355,4 +358,9 @@
   border: none;
   cursor: pointer;
   border-radius: 5px;
+}
+
+.logoSena{
+  width: 80px;
+  height: 80px;
 }

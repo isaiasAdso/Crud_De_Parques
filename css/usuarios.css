@@ -1,6 +1,7 @@
 :root{
-    --green: #58a42b;
-    --greenc: #89dc68;
+  --green: #1d4050;
+  --greenc: #6497ac;
+  --blanco: #d7e5f0;
   }
   .encabezadoContainerUsuarios{
     width: 100%;

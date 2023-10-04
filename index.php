@@ -5,7 +5,7 @@ if (isset($_SESSION['id_usuario'])) {
     $idUser = $_SESSION['id_usuario'];
     $sql = "SELECT * FROM usuarios WHERE id_usuario = '$idUser'";
     $total = mysqli_query($conexion, $sql);
-    if(mysqli_num_rows($total) > 0){
+    if (mysqli_num_rows($total) > 0) {
         $usuario = mysqli_fetch_assoc($total);
         $nombre = $usuario['nombre'];
         $apellido = $usuario['apellido'];
@@ -19,7 +19,7 @@ if (isset($_SESSION['id_usuario'])) {
     });
 </script>';
 } else {
-echo '<script>
+    echo '<script>
     document.addEventListener("DOMContentLoaded", function() {
         var contenedorOculto = document.querySelector(".profileUser");
         var contenedorExistente = document.querySelector(".contenedorIniciosesion");
@@ -32,23 +32,25 @@ echo '<script>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
 </head>
+
 <body>
     <header class="encabezado">
         <div class="contenedorIniciosesion">
             <button class="iniciarSesion" onclick="login()">Iniciar Sesión</button>
-            <button class="registrarse"  onclick="register()">Registrate</button>
+            <button class="registrarse" onclick="register()">Registrate</button>
         </div>
         <div class="profileUser">
             <article class="perfilUsuario" onclick="ventanaPerfilUsuario()"></article>
         </div>
         <div class="titulo">
-          <h1>  Parques Florencia</h1>
+            <h1> Parques Florencia</h1>
         </div>
         <div class="contenedorSearch">
             <input class="Search" type="search" name="" id="" placeholder="Buscar..">
@@ -56,7 +58,7 @@ echo '<script>
         </div>
     </header>
     <section class="contenedorPrincipal">
-        
+
         <div class="ventanaBlanca">
 
         </div>
@@ -69,7 +71,11 @@ echo '<script>
                 </div>
             </header>
             <section class="contenedorDeEventos">
-                <article class="EventoProduct" onclick="AbrirVentanaBlanca()">
+
+                <?php
+                include("php/eventos.php");
+                ?>
+                <!-- <article class="EventoProduct" onclick="">
                     <section class="ContenedorTextEvento">
                         <header class="encabezadoProduct">
                             <div class="contenedorImg"></div>
@@ -87,7 +93,7 @@ echo '<script>
                           
                         </div>
                     </section>
-                </article>
+                </article> -->
             </section>
         </section>
         <section class="contenedorParques">
@@ -97,7 +103,31 @@ echo '<script>
                 </div>
             </header>
             <section class="contenedorDeParque">
-                
+            <?php
+            include("php/parques.php")
+            ?>
+                <!-- <div class="productParque">
+                    <section class="part1parque">
+                        <div class="contenedorImagenParque">
+                            <img src="" alt="imagenParque" srcset="" class="imagenDeParque" />
+                        </div>
+                        <div class="contenedorNombreParque">
+                            <div class="nombreParque">
+                                <p>Nombre</p>
+                                <div class="tipoParque">tipo</div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="part2parque">
+                        <div class="descripcionDeparque">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
+                            tempore deleniti illum maxime incidunt amet voluptas quod dolorum
+                            corporis, dolorem beatae illo laudantium? Quod, incidunt praesentium
+                            mollitia alias facilis natus.
+                        </div>
+                    </section>
+                </div> -->
+
             </section>
         </section>
     </section>
@@ -106,17 +136,17 @@ echo '<script>
     </footer>
 
     <div class="contenedorUsuario">
-    <header class="encabezadoPerfilUsuario">
-      <article class="ContenedorImagePerfil"></article>
-    </header>
-    <main class="DatosUser">
-    <p><?php echo $nombre . ' ' . $apellido; ?></p>
-    </main>
-    <footer class="pieUser">
-      <form action="php/cerrarSesion.php">
-        <button type="submit" class="cancelar">Cerrar Sesion</button>
-      </form>
-    </footer>
+        <header class="encabezadoPerfilUsuario">
+            <article class="ContenedorImagePerfil"></article>
+        </header>
+        <main class="DatosUser">
+            <p><?php echo $nombre . ' ' . $apellido; ?></p>
+        </main>
+        <footer class="pieUser">
+            <form action="php/cerrarSesion.php">
+                <button type="submit" class="cancelar">Cerrar Sesion</button>
+            </form>
+        </footer>
     </div>
 
 
@@ -126,6 +156,7 @@ echo '<script>
     <script src="js/redirecciones.js"></script>
     <script src="js/ventanas.js"></script>
     <script src="js/perfilUsuario.js"></script>
-   
+
 </body>
+
 </html>

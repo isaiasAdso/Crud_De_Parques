@@ -29,7 +29,10 @@ if ($rol != 1) {
 
 <body>
   <header class="encabezado">
+
+
     <div class="titulo">
+      <img src="image/logo-sena-naranja-png-2022.png" class="logoSena" alt="" srcset="">
       <h1>Parques Florencia</h1>
     </div>
     <div class="contenedorSearch">
@@ -149,6 +152,7 @@ if ($rol != 1) {
                     }
                     ?>
                   </select>
+
                 </div>
               </div>
               <!-- contenedor 2 de formulario  -->
@@ -517,7 +521,7 @@ if ($rol != 1) {
         <!-- editar atracciones -->
         <section class="VentanaEditarAtraccion">
           <form action="" method="post" class="formularioEditarAtracciones" id="formularioEditarAtracciones" enctype="multipart/form-data">
-          <input type="hidden" id="valorIdAtraccion" name="valorIdAtraccion">
+            <input type="hidden" id="valorIdAtraccion" name="valorIdAtraccion">
             <div class="encabezadoAtracciones">
               <h3>EDITAR ATRACCION</h3>
             </div>
@@ -684,26 +688,26 @@ if ($rol != 1) {
 
   <div class="ventanaOpaca">
 
-  <!-- eliminar Atraccion -->
+    <!-- eliminar Atraccion -->
 
-  <div class="ventanaEliminarAtraccion">
-    <header class="EliminarAtraccionH">
-      
-    </header>
-    <section>
+    <div class="ventanaEliminarAtraccion">
+      <header class="EliminarAtraccionH">
 
-      <article class="cancelar" onclick="cerrarEliminarAtraccion()">
-        Cancelar
-      </article>
-      <form action="" method="post" id="Eliminaratraccion">
-        <input type="hidden" id="idatraccionEliminar" name="idatraccionEliminar">
-        <button type="button" class="eliminarAtraccion">Aceptar</button>
-      </form>
-    
-    </section>
-   </div>
+      </header>
+      <section>
 
-<!-- descripcion parque -->
+        <article class="cancelar" onclick="cerrarEliminarAtraccion()">
+          Cancelar
+        </article>
+        <form action="" method="post" id="Eliminaratraccion">
+          <input type="hidden" id="idatraccionEliminar" name="idatraccionEliminar">
+          <button type="button" class="eliminarAtraccion">Aceptar</button>
+        </form>
+
+      </section>
+    </div>
+
+    <!-- descripcion parque -->
     <div class="descripcionParqueSeleccionado">
       <div class="cerrarDescrip" onclick="cerrarDescripcion()"><img src="asset/close.svg" alt="" srcset="">
 

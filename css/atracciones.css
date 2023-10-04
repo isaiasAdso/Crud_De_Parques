@@ -1,6 +1,7 @@
 :root{
-    --green: #58a42b;
-    --greenc: #89dc68;
+  --green: #1d4050;
+  --greenc: #6497ac;
+  --blanco: #d7e5f0;
   }
 
 .EncabezadoAtracciones{
@@ -19,6 +20,7 @@
 .contenedorAtracciones{
     flex: 1;
     justify-content: center;
+    align-items: center;
     display: flex;
     flex: 1;
     background-color: var(--greenc);
@@ -177,7 +179,13 @@
 }
 .descripcionAtraccion2{
     height: 125px;
-    font-size: 14px;
+    font-size: 12px;
+    text-align: justify;
+}
+#contenedorDescrip{
+  width: 90%;
+  height: 90%;
+  
 }
 .TipoAtraccion{
     width: 200px;
@@ -312,6 +320,7 @@
 
   .ventanaEliminarAtraccion{
     width: 400px;
+    display: none;
     height: 9rem;
     border-radius: 5px;
     background-color: var(--greenc);

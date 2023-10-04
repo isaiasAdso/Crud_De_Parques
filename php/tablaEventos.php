@@ -16,19 +16,24 @@
                 $tipoDeEvento = $filaEvento['nombre'];
             }
         }
-
-        echo '<div class="tabla-fila" data-id="">';
-        echo '<div class="tabla-columna idEvento">' . $datos['id_evento'] . '</div>';
-        echo '<div class="tabla-columna nombreEvento">' . $datos['nombre'] . '</div>';
-        echo '<div class="tabla-columna tipoDeEvento">' . $tipoDeEvento . '</div>';
-        echo '<div class="tabla-columna fechaInicialEvento">' . $datos['fecha_inicial'] . '</div>';
-        echo '<div class="tabla-columna fechaFinalEvento">' . $datos['fecha_final'] . '</div>';
-        echo '<div class="tabla-columna HoraIncial">' . $datos['hora_inicial'] . '</div>';
-        echo '<div class="tabla-columna HoraFinal">' . $datos['hora_final'] . '</div>';
-        echo '<div class="tabla-columna acciones">';
-        echo '<img src="asset/edit.svg" alt="" srcset="" onclick="abrirEditarEvento(' . $datos['id_evento'] . ')">';
-        echo '<img src="asset/delete.svg" alt="" onclick="abrirEliminarEvento(' . $datos['id_evento'] . ')">';
-        echo '</div>';
-        echo '</div>';
+        if($datos["id_evento"] == 1){
+            // nada
+        }
+        else{
+            echo '<div class="tabla-fila" data-id="">';
+            echo '<div class="tabla-columna idEvento">' . $datos['id_evento'] . '</div>';
+            echo '<div class="tabla-columna nombreEvento">' . $datos['nombre'] . '</div>';
+            echo '<div class="tabla-columna tipoDeEvento">' . $tipoDeEvento . '</div>';
+            echo '<div class="tabla-columna fechaInicialEvento">' . $datos['fecha_inicial'] . '</div>';
+            echo '<div class="tabla-columna fechaFinalEvento">' . $datos['fecha_final'] . '</div>';
+            echo '<div class="tabla-columna HoraIncial">' . $datos['hora_inicial'] . '</div>';
+            echo '<div class="tabla-columna HoraFinal">' . $datos['hora_final'] . '</div>';
+            echo '<div class="tabla-columna acciones">';
+            echo '<img src="asset/edit.svg" alt="" srcset="" onclick="abrirEditarEvento(' . $datos['id_evento'] . ')">';
+            echo '<img src="asset/delete.svg" alt="" onclick="abrirEliminarEvento(' . $datos['id_evento'] . ')">';
+            echo '</div>';
+            echo '</div>';
+        }
+    
     }
 ?>

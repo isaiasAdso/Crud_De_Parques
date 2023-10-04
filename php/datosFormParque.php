@@ -13,10 +13,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $evento = $_POST['evento'];
     $descripcion = $_POST['descripcion'];
 
+
+    if($evento === NULL){
+        $evento = '';
+    }
     // Verificar si se ha enviado un archivo
     if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] === UPLOAD_ERR_OK) {
         // Carpeta donde se guardarán las imágenes
-        $carpeta_destino = '../imagenesParques/';
+        $destino = "../imagenesParques/";
 
         // Obtener información del archivo subido
         $nombre_archivo = $_FILES['imagen']['name'];
@@ -26,11 +30,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $nombre_unico = uniqid() . '_' . $nombre_archivo;
 
         // Mover el archivo a la carpeta de destino
-        $ruta_destino = $carpeta_destino . $nombre_unico;
+        $ruta_destino = $destino . $nombre_unico;
 
         if (move_uploaded_file($ruta_temporal, $ruta_destino)) {
             // Insertar la ruta en la base de datos
-            $ruta_imagen = $ruta_destino;
+            $ruta_imagen = $nombre_unico;
             $sql = "INSERT INTO parques (nombre, tipo_parque, ubicacion , imagen, id_atraccion, id_evento, descripcion) 
                     VALUES ('$nombre', '$tipoParque', '$ubicacion', '$ruta_imagen', '$atraccion', '$evento', '$descripcion')";
 

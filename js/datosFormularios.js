@@ -17,6 +17,10 @@ document.addEventListener("DOMContentLoaded", function () {
         if (xhr.status === 200) {
           // Maneja la respuesta del servidor aquí si es necesario
           toastr.success(xhr.responseText);
+          setTimeout(function () {
+            location.reload();
+          }, 2000);
+
           // Puedes redirigir o mostrar un mensaje de éxito al usuario aquí
         } else {
           // Maneja errores de la solicitud AJAX
@@ -41,6 +45,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (xhr.status === 200) {
           // Maneja la respuesta del servidor aquí si es necesario
           toastr.success(xhr.responseText);
+          setTimeout(function () {
+            location.reload();
+          }, 2000);
           // Puedes redirigir o mostrar un mensaje de éxito al usuario aquí
         } else {
           // Maneja errores de la solicitud AJAX
@@ -65,6 +72,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (xhr.status === 200) {
           // Maneja la respuesta del servidor aquí si es necesario
           toastr.success(xhr.responseText);
+          setTimeout(function () {
+            location.reload();
+          }, 2000);
           // Puedes redirigir o mostrar un mensaje de éxito al usuario aquí
         } else {
           // Maneja errores de la solicitud AJAX

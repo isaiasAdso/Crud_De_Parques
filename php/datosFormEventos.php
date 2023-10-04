@@ -34,8 +34,10 @@ if(isset($_FILES["imagen"])){
     $ruta_destino = "../imagenesEventos/" . $archivo_nombre; // Cambia "carpeta_destino" a la ruta real donde deseas guardar la imagen
     
     if (move_uploaded_file($archivo_temporal, $ruta_destino)) {
+
+        $imagen = $archivo_nombre;
         // Inserta los datos en la base de datos
-        $sql = "INSERT INTO eventos (nombre, descripcion, tipo_evento, fecha_inicial, fecha_final, hora_inicial, hora_final, imagen) VALUES ('$nombre', '$descripcion', '$tipo_evento', '$fecha_inicial', '$fecha_final', '$hora_inicialN', '$hora_finalN', '$ruta_destino')";
+        $sql = "INSERT INTO eventos (nombre, descripcion, tipo_evento, fecha_inicial, fecha_final, hora_inicial, hora_final, imagen) VALUES ('$nombre', '$descripcion', '$tipo_evento', '$fecha_inicial', '$fecha_final', '$hora_inicialN', '$hora_finalN', '$imagen')";
 
         if ($conexion->query($sql) === TRUE) {
             echo "Evento agregado con éxito";

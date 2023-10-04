@@ -4,8 +4,9 @@
     font-family: sans-serif;
   }
   :root{
-    --green: #58a42b;
-    --greenc: #89dc68;
+    --green: #1d4050;
+    --greenc: #6497ac;
+    --blanco: #d7e5f0;
   }
   body{
       display: flex;
@@ -81,9 +82,9 @@
   }
 
   .inciar{
-    width: 100px;
+    width: 150px;
     height: 2.2rem;
-    background-color: green;
+    background-color: var(--greenc);
     color: white;
     border: none;
     cursor: pointer;
@@ -92,7 +93,8 @@
     transition: background-color 0.3s ease;
   }
   .inciar:hover{
-    background-color: rgb(41, 148, 41); 
+    background-color: var(--green); 
+    border: 1px solid white;
   }
   .contenedorEnviar{
     display: flex;
@@ -125,6 +127,6 @@
     cursor: pointer;
   }
   .botonHome:hover{
-    background-color: rgb(41, 148, 41);
+    background-color: var(--greenc);
   }
     
